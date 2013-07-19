@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Amazon project</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Amazon project</h1>
+
+<h3>Iteration 1  -  Submitted</h3>
+
+<ul>
+<li>Lets try to reproduce the benchmark for k nearest neighbors with knn</li>
+<li>I did it straight on the data without any data transformations, but I think it makes no sense for categorical data! The distance measured between features makes no sense. </li>
+<li>I also did the cross validation</li>
+<li>Lets submit it it anyway!</li>
+<li>Not bad! just below knn benchmark</li>
+<li>1081 at leader board :)</li>
+</ul>
+
+<p><em>Leave on out cross validation:</em> 0.91</p>
+
+<p><em>Submission score:</em> 0.63083 </p>
+
+<h1></h1>
+
+<h3>Iteration 2  - Submitted</h3>
+
+<ul>
+<li>Submitted all 1s! As all requests accepted!</li>
+<li>1274th place in leader board :)</li>
+<li>As a benchmark, the k-nearest neighbors produces 0.63 with k=1!</li>
+<li>This is a result expected for random class assignment as measured by AUC</li>
+</ul>
+
+<p><em>Submission score:</em> 0.5!</p>
+
+<h1></h1>
+
+<h3>Iteration 3</h3>
+
+<ul>
+<li>I created a complex condition on features to choose accepted cases and for the rest I choose on random.</li>
+<li>Cross validation on training set only gives me a 0.47 result! it seems to be worse than the random solution. </li>
+<li>I will not submit it!</li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 4 - Submitted</h3>
+
+<ul>
+<li>How about I try some sort naive Bayes algorithm?</li>
+<li>Just like looking for spam words, but here we use codes as words</li>
+<li>Lets encode all columns as strings with a suffix, to differentiate the same numbers between different features so for example resource 3000 -&gt; 3000r, manager_id 500 -&gt; 500m and then lets do naive Bayes on that </li>
+<li>I wrote my own code for NB. It was a good excercise to learn how to do that.</li>
+</ul>
+
+<p><em>Submission score:</em> 0.60562</p>
+
+<h1></h1>
+
+<h3>Iteration 6 - Submitted!</h3>
+
+<ul>
+<li>??</li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 6 - Submitted!</h3>
+
+<ul>
+<li>Continue with Naive Bayes from iteration 4</li>
+<li>Updated the case what happens when we have a new word in the test set not yet in our dictionary</li>
+<li>Also, i think adding a full size of vocabulary in the denominator in Laplace smoothing is not a good idea. I noticed that it produces worse predictions on training set. In the most general case one adds alpha in numerator and beta in denominator. This gives us some freedom to tuning. I noticed that with smaller beta i got much better classification!</li>
+<li><p>Submission for alpha = 1 beta = 1</p></li>
+<li><p>Improvement! now better place in leader board 921! :)</p></li>
+<li><p>Result on a training set: 0.81</p></li>
+<li><p>Submission score:* 0.729</p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 7</h3>
+
+<ul>
+<li>Lets try one last time with naive Bayes and see if I can do higher score with different parameters alpha and beta alpha = 1 and beta = 100</li>
+<li><p>Not submitted, could not improve my score.</p></li>
+<li><p>Submission score:* </p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 8</h3>
+
+<ul>
+<li>Here I want to try to use rattle package for random forest</li>
+<li><p>Did not finish this </p></li>
+<li><p>Submission score:* </p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 9 - Submitted! &lt;- there is a mistake here, see submission 10!</h3>
+
+<ul>
+<li>Here I want to try a simple solution given on Kaggle website</li>
+<li><a href="http://www.kaggle.com/c/amazon-employee-access-challenge/forums/t/4938/825-using-only-excel-concat-pivot-and-vlookup-function">http://www.kaggle.com/c/amazon-employee-access-challenge/forums/t/4938/825-using-only-excel-concat-pivot-and-vlookup-function</a></li>
+<li>In some sense this is similar to the Naive Bayes solution but apparently it seems to work better! - We will see</li>
+<li>So what I am doing is:</li>
+<li>Concatenate columns 3-10 in training set into long string for each row.</li>
+<li>Make a pivot table by the newly created factor (long string) where you average the action column</li>
+<li>Make a prediction for the training where a factor is matched to an average action. </li>
+<li>Result for training set: 0.9999023 so i guess it overfits</li>
+<li><p>Make a prediction for the test set. Where a factor does not exist in test set, assign a value of mean for all averages in test set.</p></li>
+<li><p>Hmmm, something must have gone wrong. It us not very good result! Comparable with random!</p></li>
+<li><p>Lets try once more in Iteration 10</p></li>
+<li><p>Submission score:* 0.56538 </p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 10 - Submitted</h3>
+
+<ul>
+<li>Here I continue my iteration 9 which gave a very low result!</li>
+<li>I think maybe there is something wrong in the way levels are set in the file and are mixed up in my analysis!</li>
+<li>I looked here at a code: <a href="https://gist.github.com/dylanjf/5879356">https://gist.github.com/dylanjf/5879356</a> and learned functions aggregate and match :)</li>
+<li>I found a mistake! I was concatenating wrong columns! I took 2nd instead of 3rd.</li>
+<li>I improved myself up to 0.82459! :) - 811 place on leader board !</li>
+<li>It is nice because this solution is so fast!</li>
+<li>This result is exactly what people on the forum said it would be!</li>
+<li><p>The difference I noticed is that on forum they had ~4k missing values in test set after match, and I have about 7k! not sure why.</p></li>
+<li><p>Submission score:* 0.82459</p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 11 - Submitted</h3>
+
+<ul>
+<li>On forum people say that a better result can be reached if I replace the NAs in the test set with prediction of a different model. For this case I could for example take my prediction from Naive Bayes model which took into account also partial fit of words instead of the whole sentence!</li>
+<li>So I repeat the whole Iteration 10 up to a moment where I replace the NAs.</li>
+<li>The score is worse wrrrrr</li>
+<li><p>I will wait with this step till I have some better predictions</p></li>
+<li><p>Submission score:* 0.79689</p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 12 - Submitted - Best model so far</h3>
+
+<ul>
+<li>I want to play here with sparse matrices and try to apply logistic regression using glmnet package.</li>
+<li>This page is nice <a href="http://www.johnmyleswhite.com/notebook/2011/10/31/using-sparse-matrices-in-r/">http://www.johnmyleswhite.com/notebook/2011/10/31/using-sparse-matrices-in-r/</a></li>
+<li>Hurray I improved!!!!</li>
+<li>Uff that was quite difficult</li>
+<li>720 in leader board</li>
+<li>Interestingly the result is very close to what I got from cross-validation (cv.glmnet)</li>
+<li><p>Interestingly the AUC prediction is better if I use probabilities as predictions instead of classes 0/1 - for this I used the type=&ldquo;response&rdquo; instead of type=&ldquo;class&rdquo;</p></li>
+<li><p><em>Submission score:</em> 0.86179</p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 13 - Submitted</h3>
+
+<ul>
+<li>New idea based slightly on some forum discussions</li>
+<li><a href="http://www.kaggle.com/c/amazon-employee-access-challenge/forums/t/5060/using-response-for-new-features">http://www.kaggle.com/c/amazon-employee-access-challenge/forums/t/5060/using-response-for-new-features</a></li>
+<li>I want to replace my current features with new ones </li>
+<li>For example, for a manager MGRID = X I count how many times X was related to action=0 and how many times to action=1 and create two columns out of it MGRID0 and MGRID1 with these counts normalized by a total number of occurences of X in training set</li>
+<li>And then I treat these new values as numeric in my modeling. </li>
+<li>Not sure yet what to do with new features in test set, but maybe best to put them on NA. Can&#39;t put them on 0 because it would put them on the same level as features with actual 0 count.</li>
+<li>I am fitting log10 of my features - there was a skew distribution of values. After log10 a histogram looks much better.</li>
+<li>I used classification tree to make a prediction</li>
+<li><p>Pruned tree with 6 levels</p></li>
+<li><p>Not an improvement, but not bad for such a simple model!</p></li>
+<li><p><em>Submission score:</em> 0.78829</p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 14 - Submitted</h3>
+
+<ul>
+<li>Same as iteration 13 but I will try with random forest!</li>
+<li><p>O lala, very bad&hellip;</p></li>
+<li><p><em>Submission score:</em> 0.61439</p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 15 - Submitted</h3>
+
+<ul>
+<li>glm model, very simple, not bad at all</li>
+<li>I am fitting log10 of my features</li>
+<li><p>Cross validation is not correct here - see 16</p></li>
+<li><p><em>Submission score:</em> 0.83817</p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 16</h3>
+
+<ul>
+<li>I am still looking into glm model - I managed to fix my cross-validation!</li>
+<li>In my code I create new features which take into account the value of the ACTION label</li>
+<li>At first for CV I was creating my new features in the entire training set and then doing CV on it</li>
+<li>But it is not correct, because the tests sets in CV will already contain information about the labels!</li>
+<li>What I need to do is to take my raw training set, in CV in each fold separately divide it into training and test set and then create my new features in training set and then based on this only create my test features</li>
+<li>In this way we do not include information from test set labels into the validation!</li>
+<li>Now my validation works much better and really predicts what I actually got from my submission!</li>
+<li>I like it!</li>
+<li><p>I don&#39;t need to submit it again, because I submitted it already in 15 and here I only improved CV</p></li>
+<li><p><em>Submission score:</em> </p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 17 - Submitted</h3>
+
+<ul>
+<li>Ensemble of models</li>
+<li>I take some of my submissions 10,13,14,15 and take the average of their votes</li>
+<li><p>All the predictions where set to 0 or 1 (p&gt;=0.5 to 1 and p&lt;0.5 to 0)</p></li>
+<li><p><em>Submission score:</em>  0.73989</p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 18</h3>
+
+<ul>
+<li>Ensemble of models</li>
+<li>I take some of my submissions 10,12,13,15 and take the average of their votes</li>
+<li>I leave here original values of predictions - probabilities</li>
+<li><p>Or should I do the weighted average, where weights would be the AUC from submitted predictions?</p></li>
+<li><p><em>Submission score:</em>  </p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 19</h3>
+
+<ul>
+<li>Now that I have some better predictions, lets come back to my model 10 and 11 and replace missing values in test set with predictions from 12th iteration!</li>
+</ul>
+
+<hr/>
+
+<h1></h1>
+
+<h3>ROC curve intuition</h3>
+
+<ul>
+<li>Here I am trying to understand how the ROC curve mechanics works for my submissions</li>
+<li>I like this article about ROC curves:</li>
+<li><a href="ftp://norbif.uio.no/pub/outgoing/runeho/KR/Metz78SeminNuclMed8-283.pdf">ftp://norbif.uio.no/pub/outgoing/runeho/KR/Metz78SeminNuclMed8-283.pdf</a></li>
+</ul>
+
+</body>
+
+</html>
+
