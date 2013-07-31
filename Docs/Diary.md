@@ -42,7 +42,7 @@ Amazon project
 *Submission score:* 0.60562
 
 ========================================================
-### Iteration 6 - Submitted!
+### Iteration 5 - Submitted!
 * ??
 
 ========================================================
@@ -192,13 +192,46 @@ Amazon project
 * Ensemble of models
 * I take some of my submissions 10,12,13,15 and take the average of their votes
 * I leave here original values of predictions - probabilities
-* Or should I do the weighted average, where weights would be the AUC from submitted predictions?
+* I do not weight the predictions but submission score
+* I improved!!!! Now 567 on leader board!
 
-* *Submission score:*  
+* *Submission score:*  0.88146
 
 ========================================================
-### Iteration 19
+### Iteration 19 - Submitted
+* Ensemble as above but includes a result from 18 and also i take a weighted mean
+* It gives me another tiny improvement :)
+* 563 on leader board :)
+
+* *Submission score:* 0.88173
+
+
+========================================================
+### Iteration 20 - Submitted
 * Now that I have some better predictions, lets come back to my model 10 and 11 and replace missing values in test set with predictions from 12th iteration!
+* Not an improvement, but not bad too
+
+* *Submission score:* 0.82763
+
+========================================================
+### Iteration 21
+* Take the model 16 and add some more features
+* For example add how many times given code appears in data
+
+
+
+========================================================
+### Iteration 22
+* I want to try one last approach based on a study of graphs for this data
+* I create new feature for each column except resource and action
+* for example:
+* new feature is a number which for a given resource says how many unique managers it corresponds to
+* or how many unique departments etc
+* The reason is that if a resource is strictly assigned to a given department for example, then if it was
+requested from several different departments, there is a probability it will be rejected for one of them. 
+* Then I will try some models on thsi data to see how it works
+
+* *Submission score:* 
 
 
 

@@ -196,7 +196,7 @@ hr {
 
 <h1></h1>
 
-<h3>Iteration 6 - Submitted!</h3>
+<h3>Iteration 5 - Submitted!</h3>
 
 <ul>
 <li>??</li>
@@ -373,16 +373,55 @@ hr {
 <li>Ensemble of models</li>
 <li>I take some of my submissions 10,12,13,15 and take the average of their votes</li>
 <li>I leave here original values of predictions - probabilities</li>
-<li><p>Or should I do the weighted average, where weights would be the AUC from submitted predictions?</p></li>
-<li><p><em>Submission score:</em>  </p></li>
+<li>I do not weight the predictions but submission score</li>
+<li><p>I improved!!!! Now 567 on leader board!</p></li>
+<li><p><em>Submission score:</em>  0.88146</p></li>
 </ul>
 
 <h1></h1>
 
-<h3>Iteration 19</h3>
+<h3>Iteration 19 - Submitted</h3>
+
+<ul>
+<li>Ensemble as above but includes a result from 18 and also i take a weighted mean</li>
+<li>It gives me another tiny improvement :)</li>
+<li><p>563 on leader board :)</p></li>
+<li><p><em>Submission score:</em> 0.88173</p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 20 - Submitted</h3>
 
 <ul>
 <li>Now that I have some better predictions, lets come back to my model 10 and 11 and replace missing values in test set with predictions from 12th iteration!</li>
+<li><p>Not an improvement, but not bad too</p></li>
+<li><p><em>Submission score:</em> 0.82763</p></li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 21</h3>
+
+<ul>
+<li>Take the model 16 and add some more features</li>
+<li>For example add how many times given code appears in data</li>
+</ul>
+
+<h1></h1>
+
+<h3>Iteration 22</h3>
+
+<ul>
+<li>I want to try one last approach based on a study of graphs for this data</li>
+<li>I create new feature for each column except resource and action</li>
+<li>for example:</li>
+<li>new feature is a number which for a given resource says how many unique managers it corresponds to</li>
+<li>or how many unique departments etc</li>
+<li>The reason is that if a resource is strictly assigned to a given department for example, then if it was
+requested from several different departments, there is a probability it will be rejected for one of them. </li>
+<li><p>Then I will try some models on thsi data to see how it works</p></li>
+<li><p><em>Submission score:</em> </p></li>
 </ul>
 
 <hr/>
